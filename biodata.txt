@@ -1,0 +1,4 @@
+Nama    : Devitha Paradila
+NPM     : 2306700005
+prodi   : Teknik Informatika
+Matkul  : Pemograman Web 2
