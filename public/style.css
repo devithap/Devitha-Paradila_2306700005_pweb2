@@ -1,0 +1,294 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+
+    background: url('bg.gif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    min-height: 100vh;
+}
+/* NAVBAR */
+.navbar {
+    background: linear-gradient(90deg, #ec4899, #f472b6);
+
+    color: white;
+    padding: 18px;
+    text-align: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow:
+    0 4px 15px rgba(236,72,153,0.4),
+    0 0 20px rgba(236,72,153,0.25);
+
+    backdrop-filter: blur(10px);
+
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.nav-menu button {
+    background: rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 6px 12px;
+}
+
+.nav-menu button:hover {
+    background: white;
+    color: #ec4899;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar h2 {
+    margin: 0;
+
+    font-size: 38px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    text-shadow:
+    0 0 10px rgba(255,255,255,0.4),
+    0 0 20px rgba(255,255,255,0.2);
+}
+
+.title {
+    color: #ec4899;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* CONTAINER */
+.container {
+    padding: 20px;
+    text-align: center;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* SEARCH */
+input {
+    padding: 10px;
+    width: 250px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 30px; /* tambahin ini */
+}
+
+/* GRID PRODUK */
+#data {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* CARD */
+.card {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(10px);
+
+    padding: 20px;
+    border-radius: 25px;
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+
+    box-shadow: 0 15px 30px rgba(236,72,153,0.35);
+}
+
+.card img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 14px;
+    min-height: 40px;
+    color: #be185d;
+}
+
+.card p {
+    font-size: 13px;
+    color: #555;
+}
+
+.card {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.card::before {
+    content: "💖";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 14px;
+}
+.card {
+    position: relative;
+}
+
+/* BUTTON */
+button {
+    padding: 7px 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #ec4899, #f472b6);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(236,72,153,0.4);
+}
+
+/* CART */
+.cart-box {
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(236,72,153,0.2);
+}
+
+/* POPUP */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 9999; 
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    margin: 50px auto;
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+
+    max-height: 80vh;      /* BATAS TINGGI */
+    overflow-y: auto;      /* BISA SCROLL */
+}
+
+.popup img {
+    width: 150px;
+}
+
+<button class="hapus">❌</button>
+.hapus {
+    background: #ef4444;
+}
+
+.hapus:hover {
+    background: #b91c1c;
+}
+
+button:last-child:hover {
+    background: darkred;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.cart-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.cart-info {
+    flex: 1;
+}
+
+.cart-info p {
+    margin: 2px 0;
+    font-size: 13px;
+}
+
+.cart-action button {
+    margin-left: 5px;
+}
+
+.notif {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ec4899;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    display: none;
+}
+
+.badge {
+    background: white;
+    color: #ec4899;
+    padding: 3px 8px;
+    border-radius: 50px;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.footer {
+    text-align: center;
+    padding: 15px;
+    color: #999;
+    font-size: 13px;
+}
+
+.harga {
+    color: #ec4899;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+button:active {
+    transform: scale(0.95);
+}
