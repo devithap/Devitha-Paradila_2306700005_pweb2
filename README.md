@@ -1,69 +1,186 @@
-# CodeIgniter 4 Application Starter
+# 🛒 UTS Public API CodeIgniter 4
 
-## What is CodeIgniter?
+Nama: Devitha Paradila  
+NPM: 2306700005  
+Kelas: TI 6A  
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+---
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+# 💖 Deskripsi Aplikasi
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+DevithaShop merupakan aplikasi e-commerce sederhana berbasis web menggunakan Framework CodeIgniter 4 dan Public API FakeStoreAPI.
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+Aplikasi ini dibuat untuk memenuhi tugas UTS Pemrograman Web 2.
 
-## Installation & updates
+---
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+# ✨ Fitur Aplikasi
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+- Menampilkan produk dari Public API
+- Menampilkan detail produk
+- Search produk
+- Cart / keranjang belanja
+- Tambah dan hapus produk cart
+- Checkout pesanan
+- Penyimpanan data pesanan ke database MySQL
+- Menampilkan data pesanan pelanggan
 
-## Setup
+---
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+# ⚙️ Teknologi Yang Digunakan
 
-## Important Change with index.php
+- CodeIgniter 4
+- PHP
+- MySQL
+- JavaScript
+- HTML
+- CSS
+- FakeStore API
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+---
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+# 🗄️ Database
 
-**Please** read the user guide for a better explanation of how CI4 works!
+Nama Database:
 
-## Repository Management
+```sql
+devithashop
+```
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+Nama Tabel:
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+```sql
+pesanan
+```
 
-## Server Requirements
+Struktur Tabel:
 
-PHP version 8.2 or higher is required, with the following extensions installed:
+```sql
+CREATE TABLE pesanan (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama VARCHAR(100),
+    alamat TEXT,
+    produk LONGTEXT,
+    total BIGINT
+);
+```
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+---
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - The end of life date for PHP 8.1 was December 31, 2025.
-> - If you are still using below PHP 8.2, you should upgrade immediately.
-> - The end of life date for PHP 8.2 will be December 31, 2026.
+# ▶️ Cara Menjalankan Project
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+### 1. Jalankan XAMPP
+Aktifkan:
+- Apache
+- MySQL
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+---
+
+### 2. Buat Database
+
+Buka phpMyAdmin lalu buat database:
+
+```sql
+devithashop
+```
+
+---
+
+### 3. Buat Tabel Pesanan
+
+```sql
+CREATE TABLE pesanan (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama VARCHAR(100),
+    alamat TEXT,
+    produk LONGTEXT,
+    total BIGINT
+);
+```
+
+---
+
+### 4. Jalankan Project CI4
+
+Buka terminal VS Code:
+
+```bash
+php spark serve
+```
+
+---
+
+### 5. Buka Browser
+
+```bash
+http://localhost:8080
+```
+
+---
+
+# 📂 Struktur File Penting
+
+- app/Controllers/Shop.php
+- app/Controllers/Checkout.php
+- app/Controllers/Pesanan.php
+- app/Views/shop.php
+- app/Views/pesanan.php
+- public/script.js
+- app/Config/Routes.php
+
+---
+
+# 🧾 Penjelasan Fitur
+
+## 🛍️ Produk
+
+Produk diambil dari FakeStoreAPI menggunakan JavaScript fetch API.
+
+---
+
+## 🔍 Search
+
+Pengguna dapat mencari produk berdasarkan nama produk.
+
+---
+
+## 🛒 Cart
+
+Produk yang dipilih akan masuk ke keranjang menggunakan localStorage.
+
+---
+
+## 💳 Checkout
+
+Saat checkout:
+- Nama pelanggan
+- Alamat
+- Data produk
+- Total harga
+
+akan disimpan ke database MySQL.
+
+---
+
+## 📦 Data Pesanan
+
+Halaman pesanan digunakan untuk menampilkan seluruh data checkout pelanggan yang tersimpan di database.
+
+---
+
+# 🎥 Link Video Demonstrasi
+
+https://youtu.be/NjwrapR7csY?si=uSchXRlqjLKNHR0E
+
+---
+
+# 📄 Link Laporan PDF
+
+https://drive.google.com/file/d/12cxlaTn6DTyJbwiaPoCqkQ7r3bYn-RdW/view?usp=drive_link
+
+---
+
+# 👩‍💻 Author
+
+Devitha Paradila  
+2306700005
